@@ -17,19 +17,11 @@ export const GlobalProvider = ({ children }) => {
             if (darkMode === "true") {
                 document.body.classList.add('dark');
                 document.body.classList.add('bg-gray-800');
-                localStorage.setItem('darkMode', state.isDark);
             } else {
                 document.body.classList.remove('dark')
                 document.body.classList.remove('bg-gray-800')
-                localStorage.setItem('darkMode', state.isDark);
             }
-            // dispatch({ type: "set_dm", payload: darkMode });
-        } else if (!state.loadFromLocalStorage) {
-            localStorage.setItem('darkMode', state.isDark);
-            dispatch({ type: "load_LS" });
-            console.log('hey')
         }
-        console.log({ localStorage, state })
     }, [state.isDark])
 
     return (
