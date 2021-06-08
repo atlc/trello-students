@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AiOutlineCode } from 'react-icons/ai';
+import { FiSun, FiMoon } from 'react-icons/fi';
+import { GlobalContext } from '../providers/GlobalProvider'
 
-const activeButtonClasses = "bg-yellow-700 text-white px-3 py-2 rounded-md text-sm font-medium";
-const standardButtonClasses = "text-gray-300 hover:bg-yellow-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-const mobileActiveButtonClasses = "bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-const mobileButtonClasses = "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+const activeButtonClasses = "bg-yellow-700 text-blue-100 px-3 py-2 rounded-md text-sm font-medium";
+const mobileActiveButtonClasses = "bg-yellow-700 text-blue-100 block px-3 py-2 rounded-md text-base font-medium"
+
+const standardButtonClasses = "text-yellow-900 hover:bg-yellow-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+const mobileButtonClasses = "text-yellow-900 hover:bg-yellow-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false);
+    const { state, dispatch } = useContext(GlobalContext);
 
     return (
-        <nav className="bg-yellow-900">
+        <nav className="bg-yellow-300">
             {/* Adapted from the TailwindUI example nav */}
             {/* https://tailwindui.com/components/application-ui/navigation/navbars */}
             <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -22,14 +26,14 @@ const Navbar = () => {
                             <span className="sr-only">Open main menu</span>
                             {/* Icon when menu is closed. Heroicon name: outline/menu. Menu open: "hidden", Menu closed: "block" */}
                             <svg className="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         </button>
                     </div>
                     <div className="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
                         <div className="flex items-center flex-shrink-0">
-                            <div className="flex w-auto h-8 text-3xl lg:hidden"><AiOutlineCode /><span className='pl-1 text-2xl'>@atlc</span></div>
-                            <div className="items-center hidden w-auto h-8 text-4xl lg:flex"><AiOutlineCode /><span className='pl-1 text-2xl'>@atlc</span></div>
+                            <div className="flex w-auto h-8 text-3xl text-yellow-900 lg:hidden"><AiOutlineCode /><span className='pl-1 text-2xl'>@atlc</span></div>
+                            <div className="items-center hidden w-auto h-8 text-4xl text-yellow-900 lg:flex"><AiOutlineCode /><span className='pl-1 text-2xl'>@atlc</span></div>
                         </div>
                         <div className="hidden sm:block sm:ml-6">
                             <div className="flex space-x-4">
@@ -40,6 +44,9 @@ const Navbar = () => {
                                 <NavLink exact to="/contact" activeClassName={activeButtonClasses} className={standardButtonClasses}>Contact</NavLink>
                             </div>
                         </div>
+                    </div>
+                    <div className="flex">
+                        <button onClick={() => dispatch({ type: "toggle_dm" })}>{state?.isDark ? <FiMoon /> : <FiSun />}</button>
                     </div>
                 </div>
             </div>
