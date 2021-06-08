@@ -9,16 +9,16 @@ const App = () => {
       <Navbar />
       <Switch>
         <Route exact path='/'>
-          <h1>Home lmao</h1>
+          <div className='text-gray-900 text-7xl dark:text-gray-100'><h1>Home lmao</h1></div>
         </Route>
         <Route exact path='/about'>
-          <h1>About lmao</h1>
+          <div className='text-gray-900 text-7xl dark:text-gray-100'><h1>About lmao</h1></div>
         </Route>
         <Route exact path='/projects'>
-          <h1>Projects lmao</h1>
+          <div className='text-gray-900 text-7xl dark:text-gray-100'><h1>Projects lmao</h1></div>
         </Route>
         <Route exact path='/contact'>
-          <h1>Contact lmao</h1>
+          <div className='text-gray-900 text-7xl dark:text-gray-100'><h1>Contact lmao</h1></div>
         </Route>
       </Switch>
     </BrowserRouter>

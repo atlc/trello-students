@@ -5,11 +5,22 @@ export const reducer = (state, action) => {
                 ...state,
                 isDark: !state.isDark
             };
+        case "set_dm":
+            return {
+                ...state,
+                isDark: action.payload
+            }
+        case "load_LS":
+            return {
+                ...state,
+                loadFromLocalStorage: true
+            };
         default:
             return state;
     }
 }
 
 export const initialState = {
-    isDark: false
+    isDark: false,
+    loadFromLocalStorage: false
 }

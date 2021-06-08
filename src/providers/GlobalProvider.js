@@ -11,14 +11,25 @@ export const GlobalContext = createContext({
 export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    useEffect(() => { document.body.classList.add('bg-gray-200') }, []);
-
     useEffect(() => {
-        if (state.isDark) {
-            document.body.classList.add('dark', 'bg-gray-700', 'text-white')
-        } else {
-            document.body.classList.remove('dark', 'bg-gray-700', 'text-white')
+        const darkMode = localStorage.getItem('darkMode');
+        if (darkMode !== null) {
+            if (darkMode === "true") {
+                document.body.classList.add('dark');
+                document.body.classList.add('bg-gray-800');
+                localStorage.setItem('darkMode', state.isDark);
+            } else {
+                document.body.classList.remove('dark')
+                document.body.classList.remove('bg-gray-800')
+                localStorage.setItem('darkMode', state.isDark);
+            }
+            // dispatch({ type: "set_dm", payload: darkMode });
+        } else if (!state.loadFromLocalStorage) {
+            localStorage.setItem('darkMode', state.isDark);
+            dispatch({ type: "load_LS" });
+            console.log('hey')
         }
+        console.log({ localStorage, state })
     }, [state.isDark])
 
     return (
