@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import './index.css';
+import Board from './views/Board';
 
 const App = () => {
   return (
@@ -18,7 +19,9 @@ const App = () => {
           <div className='text-gray-900 text-7xl dark:text-gray-100'><h1>Projects lmao</h1></div>
         </Route>
         <Route exact path='/contact'>
-          <div className='text-gray-900 text-7xl dark:text-gray-100'><h1>Contact lmao</h1></div>
+          {/* <div className='text-gray-900 text-7xl dark:text-gray-100'><h1>Contact lmao</h1></div> */}
+          {/* <CardColumn /> */}
+          <Board />
         </Route>
       </Switch>
     </BrowserRouter>

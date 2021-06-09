@@ -1,37 +1,22 @@
 import React from 'react';
-import { useDrag } from 'react-dnd';
 
-const ItemTypes = {
-    CARD: 'trello_card'
-}
+//@ts-ignore
+const Card = ({ text }) => {
 
-const Card = ({ isDragging, text }) => {
-
-    const [{ opacity }, dragRef] = useDrag(
-        () => ({
-            type: ItemTypes.CARD,
-            item: { text },
-            collect: (monitor) => ({
-                opacity: monitor.isDragging() ? 0.5 : 1
-            })
-        }),
-        []
-    )
+    //   <div className='border-4 border-blue-500 p-3'>{text}</div>
 
     return (
-        <div ref={dragRef} style={{ opacity }}>
-            {text}
-        </div>
+        <div>{text}</div>
     )
 }
 
 export default Card;
 
-interface DefaultCardAttrs {
-    id: string;
-    assigned_user_id: string;
-    viewable_user_ids: string[];
-    content: string;
-    created_at: string;
-    last_updated: string;
-}
+// interface DefaultCardAttrs {
+//     id: string;
+//     assigned_user_id: string;
+//     viewable_user_ids: string[];
+//     content: string;
+//     created_at: string;
+//     last_updated: string;
+// }
