@@ -39,9 +39,7 @@ const Navbar = () => {
                             <div className="flex space-x-4">
                                 {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                                 <NavLink exact to="/" activeClassName={activeButtonClasses} className={standardButtonClasses} aria-current="page">Home</NavLink>
-                                <NavLink exact to="/about" activeClassName={activeButtonClasses} className={standardButtonClasses}>About</NavLink>
-                                <NavLink exact to="/projects" activeClassName={activeButtonClasses} className={standardButtonClasses}>Projects</NavLink>
-                                <NavLink exact to="/contact" activeClassName={activeButtonClasses} className={standardButtonClasses}>Contact</NavLink>
+                                <NavLink exact to="/board" activeClassName={activeButtonClasses} className={standardButtonClasses}>Board</NavLink>
                             </div>
                         </div>
                     </div>
@@ -55,9 +53,7 @@ const Navbar = () => {
                 <div className="px-2 pt-2 pb-3 space-y-1">
                     {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                     <NavLink onClick={() => setOpenMenu(false)} exact to="/" activeClassName={mobileActiveButtonClasses} className={mobileButtonClasses} aria-current="page">Home</NavLink>
-                    <NavLink onClick={() => setOpenMenu(false)} exact to="/about" activeClassName={mobileActiveButtonClasses} className={mobileButtonClasses}>About</NavLink>
-                    <NavLink onClick={() => setOpenMenu(false)} exact to="/projects" activeClassName={mobileActiveButtonClasses} className={mobileButtonClasses}>Projects</NavLink>
-                    <NavLink onClick={() => setOpenMenu(false)} exact to="/contact" activeClassName={mobileActiveButtonClasses} className={mobileButtonClasses}>Contact</NavLink>
+                    <NavLink onClick={() => setOpenMenu(false)} exact to="/board" activeClassName={mobileActiveButtonClasses} className={mobileButtonClasses}>Board</NavLink>
                 </div>
             </div>}
         </nav>
