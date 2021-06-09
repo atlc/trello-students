@@ -8,6 +8,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
+      {/* Create Card modal here, use a hook to hide/show */}
       <Switch>
         <Route exact path='/'>
           <div className='text-gray-900 text-7xl dark:text-gray-100'><h1>Home lmao</h1></div>
