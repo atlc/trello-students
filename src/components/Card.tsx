@@ -1,30 +1,29 @@
 import React from 'react';
+import { AiOutlineEye } from 'react-icons/ai';
 
 //@ts-ignore
-const Card = ({ text, title = 'Title BottomText', time = new Date().toLocaleString(), id = '1' }) => {
+const Card = ({ text, title = 'Title BottomText', time = new Date().toLocaleString() }) => {
 
 
     return (
-        <main className="flex justify-center w-full">
-            <div className="flex flex-col p-3 bg-white border border-black shadow-md rounded-xl">
-                <section className="text-sm font-thin text-orange-400">
+        <main className="my-2 flex justify-center w-full">
+            <div className="flex flex-col p-3 bg-gray-100 dark:bg-gray-600 border border-green-700 shadow-md rounded-xl">
+                <section className="text-sm font-thin text-green-400">
                     {time}
                 </section>
-                <section className="text-3xl font-bold">
+                <section className="text-2xl font-bold">
                     {title}
                 </section>
-                <section className="font-normal text-gray-700 text-md">
+                <section className="font-normal text-gray-700 dark:text-green-200 text-md">
                     {text}
                 </section>
-                <section className="text-lg font-bold text-red-900">
+                <section className="text-lg font-bold text-green-900 dark:text-green-400">
                     @atlc lmao
                 </section>
-                <section className="flex justify-end">
-                    <button
-                        type="button"
-                        className="px-3 py-1 text-white bg-red-600 rounded-md"
-                        onClick={() => alert(`Get Details Modal for id #${id}`)}
-                    >See Details</button>
+                <section>
+                    <AiOutlineEye 
+                        onClick={() => alert('Viewing details for card!')}
+                    />
                 </section>
             </div>
         </main>
