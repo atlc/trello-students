@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import './index.css';
 import Board from './views/Board';
 import SingleCard from './views/SingleCard';
+import Editable from './views/Editable';
 
 const App = () => {
   return (
@@ -17,8 +18,11 @@ const App = () => {
         <Route exact path='/board'>
           <Board />
         </Route>
-        <Route exact path='/card/:id'>
+        <Route exact path='/details'>
           <SingleCard />
+        </Route>
+        <Route exact path='/edit'>
+          <Editable />
         </Route>
       </Switch>
     </BrowserRouter>
