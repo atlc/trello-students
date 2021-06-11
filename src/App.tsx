@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import './index.css';
 import Board from './views/Board';
+import SingleCard from './views/SingleCard';
 
 const App = () => {
   return (
@@ -15,6 +16,9 @@ const App = () => {
         </Route>
         <Route exact path='/board'>
           <Board />
+        </Route>
+        <Route exact path='/card/:id'>
+          <SingleCard />
         </Route>
       </Switch>
     </BrowserRouter>

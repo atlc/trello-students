@@ -15,7 +15,7 @@ const Navbar = () => {
     const { state, dispatch } = useContext(GlobalContext);
 
     return (
-        <nav className="mb-4 bg-green-300 shadow-md dark:bg-gray-900">
+        <nav className="mb-4 bg-green-400 shadow-md dark:bg-gray-900">
             {/* Adapted from the TailwindUI example nav */}
             {/* https://tailwindui.com/components/application-ui/navigation/navbars */}
             <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
