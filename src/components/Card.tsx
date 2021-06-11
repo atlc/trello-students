@@ -18,24 +18,24 @@ const Card = ({ text, title = 'Title BottomText', time = new Date().toLocaleStri
                     {title}
                 </section>
                 <section className="font-normal text-gray-700 dark:text-green-200 text-md flex flex-wrap">
-                    {text} {text} {text} {text} {text} {text} 
+                    {text} {text} {text} {text} {text} {text}
                 </section>
                 <section className="text-lg font-bold text-green-900 dark:text-green-400">
                     @atlc lmao
                 </section>
                 <section className='text-3xl text-green-400'>
                     {isPreview
-                    ? <AiOutlineEye onClick={() => history.push({
-                        state: { text, title, time, isPreview },
-                        pathname: `/details`
-                    })} />
-                    : <div className='flex m-auto justify-between'>
-                        <IoMdArrowRoundBack onClick={() => history.goBack() } />
-                        <RiFileEditFill onClick={() => history.push({
-                        state: { text, title, time, isPreview },
-                        pathname: `/edit`
-                    })} />
-                    </div>
+                        ? <AiOutlineEye onClick={() => history.push({
+                            state: { text, title, time, isPreview },
+                            pathname: `/details`
+                        })} />
+                        : <div className='flex m-auto justify-between'>
+                            <IoMdArrowRoundBack onClick={() => history.goBack()} />
+                            <RiFileEditFill onClick={() => history.push({
+                                state: { text, title, time, isPreview },
+                                pathname: `/edit`
+                            })} />
+                        </div>
                     }
                 </section>
             </div>
