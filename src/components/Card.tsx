@@ -10,20 +10,20 @@ const Card = ({ text, title = 'Title BottomText', time = new Date().toLocaleStri
 
     return (
         <main className="my-2 flex flex-wrap justify-center">
-            <div className="flex flex-wrap flex-col p-3 bg-gray-100 dark:bg-gray-600 border border-green-700 rounded-xl shadow-xl">
-                <section className="text-sm font-thin text-green-400">
+            <div className="flex flex-wrap flex-col p-3 bg-gray-100 dark:bg-gray-600 border border-indigo-700 rounded-xl shadow-xl">
+                <section className="text-sm font-thin text-indigo-400">
                     {time}
                 </section>
                 <section className="text-2xl font-bold">
                     {title}
                 </section>
-                <section className="font-normal text-gray-700 dark:text-green-200 text-md flex flex-wrap">
+                <section className="font-normal text-gray-700 dark:text-indigo-200 text-md flex flex-wrap">
                     {text} {text} {text} {text} {text} {text}
                 </section>
-                <section className="text-lg font-bold text-green-900 dark:text-green-400">
+                <section className="text-lg font-bold text-indigo-900 dark:text-indigo-400">
                     @atlc lmao
                 </section>
-                <section className='text-3xl text-green-400'>
+                <section className='text-3xl text-indigo-400'>
                     {isPreview
                         ? <AiOutlineEye onClick={() => history.push({
                             state: { text, title, time, isPreview },

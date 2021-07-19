@@ -6,6 +6,6 @@
 .btn {
   @apply px-4 py-2 font-semibold rounded-lg shadow-md;
 }
-.btn-green {
-  @apply text-white bg-green-500 hover:bg-green-700;
+.btn-red {
+  @apply text-white bg-indigo-500 hover:bg-indigo-700;
 } */

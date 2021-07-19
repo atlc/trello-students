@@ -7,7 +7,7 @@ const CardColumn = ({ cardGroup, column, widthFraction }: CardColProps) => {
     return (
         <div key={`column-${column}`} className={`flex justify-center px-2 w-1/${widthFraction} overflow-hidden`}>
             <div className="w-full">
-                <div className='flex justify-center w-full p-3 my-4 text-3xl text-green-700 align-middle border-b-4 border-l-2 border-r-2 border-green-700 rounded-lg max-h-16'>
+                <div className='flex justify-center w-full p-3 my-4 text-3xl text-indigo-700 align-middle border-b-4 border-l-2 border-r-2 border-indigo-700 rounded-lg max-h-16'>
                     <h1>{column}</h1>
                     {column === 'To-do' && <AiOutlinePlusCircle className='ml-8 place-self-end' onClick={() => alert(`Adding new card!`)} />}
                 </div>
