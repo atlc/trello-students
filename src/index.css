@@ -7,5 +7,5 @@
   @apply px-4 py-2 font-semibold rounded-lg shadow-md;
 }
 .btn-red {
-  @apply text-white bg-indigo-500 hover:bg-indigo-700;
+  @apply text-white bg-blue-500 hover:bg-blue-700;
 } */
